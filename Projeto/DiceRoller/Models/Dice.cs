@@ -9,6 +9,19 @@ namespace DiceRoller.Models
     
     public class Dice
     {
-        //Concstrução da classe Dice
+        //construção da classe Dice
+        public int lados { get; set; }
+        public int NumeroSorteado { get; set; }
+
+        Dice(int quantidadeLados)
+        {
+            lados = quantidadeLados;
+        }
+
+        public void Rolar()
+        {
+            Random random = new Random();
+            NumeroSorteado = random.Next(lados) + 1;
+        }
     }
 }
